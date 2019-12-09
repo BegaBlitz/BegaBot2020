@@ -4,6 +4,7 @@ import robot.hardware.chassis.RobotChassis;
 import robot.hardware.motors.LargeMotor;
 import robot.hardware.sensors.ColorSensor;
 import robot.hardware.sensors.GyroSensor;
+import user.runs.TestRun;
 
 public class Startup {
 	
@@ -17,8 +18,9 @@ public class Startup {
 		new GyroSensor("gyro", 3);
 	}
 	
-	public static void createRuns() {
+	public static void createRuns() { 
 		//declare your run here
+		new TestRun("Test Run");
 	}
 	
 	public static void init() {
