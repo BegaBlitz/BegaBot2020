@@ -14,6 +14,7 @@ public class GyroFollower {
 		
 		while(RunHandler.isRunning() && RobotMap.getMotor("leftWheel").readEncoder() <= distance
 				&& RobotMap.getMotor("rightWheel").readEncoder() <= distance) {
+
 			int error = (int) (RobotMap.getSensor("gyro").read() - target);
 			System.out.println(RobotMap.getSensor("gyro").read());
 			RobotMap.getChassis().tankDrive(p0, p0 + (error * kp));
