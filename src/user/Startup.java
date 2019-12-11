@@ -18,8 +18,14 @@ public class Startup {
 		new GyroSensor("gyro", 3);
 	}
 	
+<<<<<<< HEAD
 	public static void createRuns() {
 		new TestRun("test run");
+=======
+	public static void createRuns() { 
+		//declare your run here
+		new TestRun("Test Run");
+>>>>>>> branch 'master' of https://github.com/BegaBlitz/BegaBot2020.git
 	}
 	
 	public static void init() {
