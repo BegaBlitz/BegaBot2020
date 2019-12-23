@@ -5,8 +5,8 @@ import robot.hardware.motors.LargeMotor;
 import robot.hardware.sensors.ColorSensor;
 import robot.hardware.sensors.GyroSensor;
 import user.runs.Run1;
-import user.runs.Run1_2;
 import user.runs.Run2;
+import user.runs.Test;
 
 public class Startup {
 	
@@ -23,7 +23,8 @@ public class Startup {
 	public static void createRuns() {
 		new Run1("Run 1");
 		new Run2("Run 2");
-		new Run1_2("test");
+		//new Run1_2("test");
+		new Test("Test");
 		} 
 
 	
