@@ -1,4 +1,3 @@
-
 package user.runs;
 
 import robot.RobotMap;
@@ -15,7 +14,7 @@ public class Run2 extends RobotRun {
 	public void runInstructions() {
 		RobotMap.getSensor("gyro").resetToCurrentValue();
 		
-		GyroFollower.followDegreesForward(0.7, 0.5, 0, 0.008, 1105, true);
+		GyroFollower.followDegreesForward(1.0, 0.8, 0, 0.1, 15000, true);
 		RobotMap.getChassis().tankDriveDegrees(-1.0, -1.0, 110, true);
 		RobotMap.getChassis().tankDriveDegrees(0.1, -0.7, 0.5, 400, true);
 		RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5,580, true);
