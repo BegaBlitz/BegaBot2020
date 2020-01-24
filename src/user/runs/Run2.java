@@ -2,6 +2,8 @@ package user.runs;
 
 import robot.RobotMap;
 import robot.runs.RobotRun;
+import robot.utils.Wait;
+import user.utils.Converter;
 import user.utils.GyroFollower;
 
 public class Run2 extends RobotRun {
@@ -14,12 +16,15 @@ public class Run2 extends RobotRun {
 	public void runInstructions() {
 		RobotMap.getSensor("gyro").resetToCurrentValue();
 		
-		GyroFollower.followDegreesForward(1.0, 0.8, 0, 0.1, 15000, true);
-		RobotMap.getChassis().tankDriveDegrees(-1.0, -1.0, 110, true);
-		RobotMap.getChassis().tankDriveDegrees(0.1, -0.7, 0.5, 400, true);
-		RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5,580, true);
-		RobotMap.getChassis().tankDriveDegrees(-0.7, 0.1, 0.5, 330, true);
-		RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5, 25, true);
+		GyroFollower.followDegreesForward(0.4, 0.6, 0, 0.16, Converter.cmToDegrees(66), true);
+		Wait.waitForSeconds(0.3);
+		//GyroFollower.followDegreesForward(p0, acceleration, target, kp, distance, brake);
+		RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5, Converter.cmToDegrees(27), true);
+		//RobotMap.getChassis().tankDriveDegrees(leftSpeed, rightSpeed, acceleration, degrees, brake);
+		RobotMap.getChassis().tankDriveDegrees(-0.4, 0.4, 0.5, 120, true);
+		RobotMap.getChassis().tankDriveDegrees( 0.45, 0.4,0.7, 1000, true);
+
+
 
 	}
 

@@ -16,8 +16,8 @@ public class GyroFollower {
 
 			int error = (int) (RobotMap.getSensor("gyro").read() - target);
 			System.out.println(RobotMap.getSensor("gyro").read());
-			RobotMap.getChassis().tankDrive(p0, Math.min(p0 + (error * kp), 1.0));
-			
+			RobotMap.getChassis().tankDrive(p0, Converter.clamp(p0 + (error * kp)));
+
 		}
 		
 		if(brake) {

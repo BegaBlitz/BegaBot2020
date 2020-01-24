@@ -5,60 +5,36 @@ import robot.runs.RunHandler;
 
 public class LineFollow {
 
-	public static double white = 0.75;
-	public static double black = 0.07;
+	public static double white = 0.65;
+	public static double black = 0.06;
 	static double target = (white + black) / 2;
 
-	public static void follow(String sensor, String side, double kp, double p0) {
-		double error;
-		double leftSpeed = p0;
-		double rightSpeed = p0;
-		
-		RobotMap.getChassis().tankDrive(p0, p0);
-		
-		while (RunHandler.isRunning()) {
-			
-			leftSpeed = p0;
-			rightSpeed = p0;
-			
-			error = RobotMap.getSensor(sensor).read() - target;
-			if (side.equalsIgnoreCase("left")) {
-				leftSpeed = p0 + error * kp;
-			} else {
-				rightSpeed = p0 + error * kp;
-			}
-			
-			RobotMap.getChassis().tankDrive(leftSpeed, rightSpeed);
-			
-		}
-	}
-
-	public static void followDegrees(int degrees, String sensor, String side, double kp, double p0, boolean brake) {
+	public static void followDegrees(int degrees, String sensorName, String side, double kp, double p0, boolean brake) {
 		RobotMap.getMotor("leftWheel").resetEncoder();
 		RobotMap.getMotor("rightWheel").resetEncoder();
 
 		double leftSpeed = p0;
 		double rightSpeed = p0;
-		
 		double error;
 
 		RobotMap.getChassis().tankDrive(p0, p0);
 		
 		while (RunHandler.isRunning() && RobotMap.getMotor("leftWheel").readEncoder() <= degrees
-				&& RobotMap.getMotor("righrWheel").readEncoder() <= degrees) {
+				&& RobotMap.getMotor("rightWheel").readEncoder() <= degrees) {
 			
 			leftSpeed = p0;
 			rightSpeed = p0;
 			
-			error = RobotMap.getSensor(sensor).read() - target;
+			error = RobotMap.getSensor(sensorName).read() - target;
 	
 			if (side.equalsIgnoreCase("left")) {
-				leftSpeed = p0 + error * kp;
-			} else {
-				rightSpeed = p0 + error * kp;
+				leftSpeed = Converter.clamp(p0 + error * kp);
+			} else if (side.equalsIgnoreCase("right")) {
+				rightSpeed = Converter.clamp(p0 + error * kp);
 			}
 			
 			RobotMap.getChassis().tankDrive(leftSpeed, rightSpeed);
+			System.out.println(RobotMap.getSensor(sensorName).read());
 		}
 		
 		if (brake == true) {
