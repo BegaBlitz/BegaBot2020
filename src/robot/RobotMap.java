@@ -7,7 +7,7 @@ import robot.hardware.motors.RobotMotor;
 import robot.hardware.sensors.RobotSensor;
 
 public class RobotMap {
-	private RobotMap() {
+	protected RobotMap() {
 	}
 
 	private static RobotSensor[] sensors = new RobotSensor[4];

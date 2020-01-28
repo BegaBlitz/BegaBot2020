@@ -21,15 +21,16 @@ public class run4 extends RobotRun{
 	RobotMap.getSensor("gyro").resetToCurrentValue();
 	
 	
-	GyroFollower.followDegreesForward(0.5, 0.5, 0, 0.02,Converter.cmToDegrees(59), false);
-	RobotMap.getChassis().tankDriveDegrees(-0.4, 0.4, 0.5, 85, true);
+	GyroFollower.followDegreesForward(0.55, 0.55, 0, 0.02, Converter.cmToDegrees(48), false);
+	LineFollow.followDegrees(Converter.cmToDegrees(20), "rightColor", "left", 0.3, 0.3, true);
+	RobotMap.getChassis().tankDriveDegrees(-0.35, 0.35, 0.4, 75, true);
 	Wait.waitForSeconds(0.3);
-	RobotMap.getChassis().tankDriveDegrees(0.5, 0.5, 0.5, Converter.cmToDegrees(23), true);
+	RobotMap.getChassis().tankDriveDegrees(0.5, 0.5, 0.5, Converter.cmToDegrees(13), true);
 	Wait.waitForSeconds(0.3);
 	RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5, Converter.cmToDegrees(23) , true);
-	RobotMap.getChassis().tankDriveDegrees(0.4, -0.4, 0.5, 85, true);
+	RobotMap.getChassis().tankDriveDegrees(0.4, -0.4, 0.5, 75, true);
 	Wait.waitForSeconds(0.3);
-	GyroFollower.followDegreesForward(0.6, 0.6, 0, 0.02,Converter.cmToDegrees(115), true);
+	GyroFollower.followDegreesForward(-0.6, 0.6, 0, 0.02,Converter.cmToDegrees(115), true);
 	//GyroFollower.followDegreesBackwards(-0.5, 0.5, 36, 0.02,600, true);
 
 
