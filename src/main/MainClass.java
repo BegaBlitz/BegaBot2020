@@ -17,7 +17,7 @@ public class MainClass {
 		Button.ESCAPE.addKeyListener(new StopListener());
 		
 		System.out.println("Init runs");
-		Startup.createRuns();
+		Startup.ceateRuns();
 		
 		System.out.println("Test Hardware");
 		RobotUtils.testHardware();

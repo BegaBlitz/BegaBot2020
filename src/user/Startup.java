@@ -22,11 +22,11 @@ public class Startup {
 		new GyroSensor("gyro", 3);
 	}
 	
-	public static void createRuns() {
-		new Run2("Run 2");
+	public static void ceateRuns() {
+		new try1("Run 1");
 		new run4("run 4");
-		new try1("test");
-		new crane("crane");
+		new Run2("Run 3");
+		new crane("test");
 		} 
 
 	
