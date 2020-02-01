@@ -5,16 +5,21 @@ import robot.runs.RobotRun;
 import user.utils.Converter;
 import user.utils.GyroFollower;
 
-public class Run1 extends RobotRun {
+public class run_5 extends RobotRun{
 
-	public Run1(String name) {
+	public run_5(String name) {
 		super(name);
+		// TODO Auto-generated constructor stub
 	}
+
 	@Override
 	public void runInstructions() {
+		// TODO Auto-generated method stub
 		RobotMap.getSensor("gyro").resetToCurrentValue();
 		
-		GyroFollower.followDegreesBackwards(0.5, 0.5, 0, 0.02,Converter.cmToDegrees(77), true);
-		
+		GyroFollower.followDegreesForward(0.5, 0.5, 0, 0.025, Converter.cmToDegrees(78), true);
 	}
+
+	
 }
+

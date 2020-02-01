@@ -16,10 +16,9 @@ public class Run2 extends RobotRun {
 	public void runInstructions() {
 		RobotMap.getSensor("gyro").resetToCurrentValue();
 		
+		GyroFollower.followDegreesForward(0.5, 0.5, 0, 0.04, Converter.cmToDegrees(55), true);
 		Wait.waitForSeconds(0.3);
-		//GyroFollower.followDegreesForward(p0, acceleration, target, kp, distance, brake);
 		RobotMap.getChassis().tankDriveDegrees(-0.5, -0.5, 0.5, Converter.cmToDegrees(27), true);
-		//RobotMap.getChassis().tankDriveDegrees(leftSpeed, rightSpeed, acceleration, degrees, brake);
 		RobotMap.getChassis().tankDriveDegrees(-0.4, 0.4, 0.5, 120, true);
 		RobotMap.getChassis().tankDriveDegrees( 0.45, 0.4,0.7, 1000, true);
 
