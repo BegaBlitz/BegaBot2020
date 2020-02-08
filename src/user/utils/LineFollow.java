@@ -9,6 +9,12 @@ public class LineFollow {
 	public static double black = 0.06;
 	static double target = (white + black) / 2;
 
+	public static void calibrate(double black, double white) {
+		LineFollow.white = white;
+		LineFollow.black = black;
+		target = (white + black) / 2;
+	}
+	
 	public static void followDegrees(int degrees, String sensorName, String side, double kp, double p0, boolean brake) {
 		RobotMap.getMotor("leftWheel").resetEncoder();
 		RobotMap.getMotor("rightWheel").resetEncoder();
@@ -34,7 +40,6 @@ public class LineFollow {
 			}
 			
 			RobotMap.getChassis().tankDrive(leftSpeed, rightSpeed);
-			System.out.println(RobotMap.getSensor(sensorName).read());
 		}
 		
 		if (brake == true) {

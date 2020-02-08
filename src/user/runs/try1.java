@@ -18,12 +18,17 @@ public class try1 extends RobotRun{
 	public void runInstructions() {
 		// TODO Auto-generated method stub
 	RobotMap.getSensor("gyro").resetToCurrentValue();
+	// זה גורם לג'יירו לכוון את הרובוט בצורה ישרה
 	GyroFollower.followDegreesForward(0.55, 0.55, 0, 0.02, Converter.cmToDegrees(48), false);
+	// הרובוט מזיז את שני הגלגלים שלו 48 סנטימטרים במהירות של 0.55 כדי לנסוע ישר אלה הקו הקרוב
 	LineFollow.followDegrees(Converter.cmToDegrees(50), "rightColor", "left", 0.3, 0.3, false);
-	LineFollow.followDegrees(Converter.cmToDegrees(35), "rightColor", "left", 0.51, 0.27, false);
-	LineFollow.followDegrees(Converter.cmToDegrees(22.5), "rightColor", "left", 0.32, 0.3, true);
-	//RobotMap.getChassis().tankDriveDegrees(0.4, -0.4, 0.5, 2, true);
+	// הרובוט עוקב אחרי הקו כ  50 ס"מ עם הסנסור הימני על הצד השמאלי של הקו השחור
+	LineFollow.followDegrees(Converter.cmToDegrees(35), "rightColor", "left", 0.51, 0.27, false);	
+	// הרובוט עוקב אחרי הקו כ   35 ס"מ עם הסנסור הימני על הצד השמלי של הקו. בשורה הזו הגדלנו את מהירות הסטיה בגלל הנטייה שישי בקו	
+	LineFollow.followDegrees(Converter.cmToDegrees(22.5), "rightColor", "left", 0.3, 0.3, true);
+	// הרובוט עוקב אחרי הקו כ  50 ס"מ עם הסנסור הימני על הצד השמאלי של הקו השחור
 	RobotMap.getChassis().tankDriveDegrees(-0.7, -0.7, 0.5, Converter.cmToDegrees(200), true);
+	// הרובוט מזיז את שני הגלגלים שלו 200 סנטימטרים במהירות של 0.7- כדי לחזור אחורה לבסיס
 	}
 
 }

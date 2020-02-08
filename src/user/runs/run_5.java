@@ -17,9 +17,10 @@ public class run_5 extends RobotRun{
 		// TODO Auto-generated method stub
 		RobotMap.getSensor("gyro").resetToCurrentValue();
 		
-		GyroFollower.followDegreesForward(0.5, 0.5, 0, 0.025, Converter.cmToDegrees(78), true);
-	}
+		GyroFollower.followDegreesForward(0.5, 0.5, 0, 0.02, Converter.cmToDegrees(75), true);
+	
 
 	
+	}
 }
 
